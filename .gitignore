@@ -34,19 +34,21 @@ wheels/
 *.csv
 *.json
 *.xml.gz
-*.xml
-state.xml.gz
 
 # Images
 *.png
 *.jpg
 *.jpeg
 
-# SUMO specific
-*.net.xml
-*.rou.xml
-*.sumocfg
+# SUMO specific (only exclude generated output files, not source files)
 gui-settings.xml
+state.xml.gz
+# Exclude generated simulation files (patterns: routes_*, simulation_*, save.*)
+routes_*.rou.xml
+simulation_*.sumocfg
+save.*
+*.add.xml
+*.con.xml
 
 # SUMO tools directory
 tools/
