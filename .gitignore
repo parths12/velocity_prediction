@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Model files
+*.pth
+*.pt
+*.h5
+*.pkl
+*.joblib
+
+# Data files
+*.csv
+*.json
+*.xml.gz
+*.xml
+state.xml.gz
+
+# Images
+*.png
+*.jpg
+*.jpeg
+
+# SUMO specific
+*.net.xml
+*.rou.xml
+*.sumocfg
+gui-settings.xml
+
+# SUMO tools directory
+tools/
+bin/
+include/
+share/
+data/
+doc/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
