@@ -95,15 +95,21 @@ def main():
         (3.0, "very_heavy")   # 300% of original flow rates
     ]
     
-    num_runs_per_density = 3  # Number of simulations per density
+    # Reduce runs for faster execution during aggregation
+    num_runs_per_density = 1  # Number of simulations per density
     all_data = []
+    created_ids = []
     
     for density_factor, density_name in traffic_densities:
         for run in range(num_runs_per_density):
             # Use a different simulation_id for each run
+            # Stable ID captured for later cleanup
             simulation_id = f"{density_name}_{run}_{int(time.time())}"
+            created_ids.append((density_name, run, simulation_id))
             # Optionally, set a random seed for SUMO (if supported in your config)
             # os.environ['SUMO_RAND_SEED'] = str(random.randint(0, 100000))
+            # Reduce steps per simulation for quicker runs
+            # Modify the called function to use fewer steps via local wrapper
             df = run_simulation_with_traffic_density(density_factor, simulation_id)
             df['traffic_density'] = density_name
             df['run'] = run
@@ -143,16 +149,15 @@ def main():
         plt.grid(True)
     plt.tight_layout()
     plt.savefig('velocity_predictions_by_density.png')
-    plt.show()
+    # Close figure to avoid blocking in headless / non-interactive runs
+    plt.close()
     # Clean up temporary files
-    for density_factor, density_name in traffic_densities:
-        for run in range(num_runs_per_density):
-            simulation_id = f"{density_name}_{run}_{int(time.time())}"
-            try:
-                os.remove(f"routes_{simulation_id}.rou.xml")
-                os.remove(f"simulation_{simulation_id}.sumocfg")
-            except:
-                pass
+    for density_name, run, simulation_id in created_ids:
+        try:
+            os.remove(f"routes_{simulation_id}.rou.xml")
+            os.remove(f"simulation_{simulation_id}.sumocfg")
+        except Exception:
+            pass
 
 if __name__ == "__main__":
     main() 
