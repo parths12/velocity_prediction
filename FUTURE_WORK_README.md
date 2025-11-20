@@ -241,30 +241,5 @@ Expected improvements:
 
 ---
 
-## 🎯 For IMMERSO AI Interview
-
-These enhancements demonstrate:
-1. **Advanced ML thinking**: Beyond basic models
-2. **Safety engineering**: Uncertainty quantification
-3. **Rigorous evaluation**: Baseline comparisons
-4. **Interpretability**: Attention visualization
-5. **Research mindset**: Publication-ready code
-
-Tell them:
-*"I've implemented three future work enhancements that show deeper understanding of ML systems. The attention visualization shows the model learns realistic traffic physics. Uncertainty quantification proves the model knows when it's uncertain - critical for autonomous driving. Baseline comparisons quantify our innovation with hard numbers."*
-
----
-
-## 📝 Next Steps
-
-1. ✅ Copy the 3 Python files to your project
-2. ✅ Run each module and generate visualizations
-3. ✅ Update your GitHub README with new outputs
-4. ✅ Create presentation slides with these visualizations
-5. ✅ Discuss results during IMMERSO AI meetings
-
----
 
 **Created:** November 6, 2025  
-**For:** Parth Shinde - Vehicle Velocity Prediction Project  
-**Repository:** https://github.com/parths12/velocity_prediction
